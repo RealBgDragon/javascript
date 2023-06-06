@@ -1,5 +1,5 @@
-console.log("kys");
+let x = 3.14;
 
-window.alert("KYS");
+x = Math.round(x);
 
-let age = 18;
+console.log(x);
