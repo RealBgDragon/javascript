@@ -1,5 +1,10 @@
-let x = 3.14;
+let userName = "Martin";
 
-x = Math.round(x);
+let a = userName.length;
+let b = userName.charAt(3);
 
-console.log(x);
+console.log(a);
+console.log(b);
+
+$("#myButton_res").text("Gay");
+document.getElementById("myButton_res").innerHTML = "not gay";

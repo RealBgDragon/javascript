@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <label id="myLabel">How old are you:</label><br>
-    <input type="text" id="myText1"><br>
-    <input type="text" id="myText2"><br>
-    <button type="button" id="myButton">Submmit</button>
-
-
+    <label id="myLabel">0</label><br>
+    <div class="button-container">
+        <button id="myButton_dec">Decrease</button>
+        <button id="myButton_res">Reset</button>
+        <button id="myButton_inc">Increase</button>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
