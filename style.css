@@ -1,10 +1,47 @@
-#myLabel{
-    display: block;
-    text-align: center;
-    font-size: 50px;
+body {
+    font-family: Arial, sans-serif;
 }
+
+.form-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input, select {
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
 .button-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
-  
+
+.my-button {
+    flex-grow: 1;  /* Makes the buttons take up remaining space */
+    margin: 0 5px;  /* Adds a little bit of margin between the buttons */
+}
+
+
+input[type="submit"] {
+    margin-top: 15px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}

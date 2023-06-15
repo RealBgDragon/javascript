@@ -9,11 +9,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <label id="myLabel">0</label><br>
-    <div class="button-container">
-        <button id="myButton_dec">Decrease</button>
-        <button id="myButton_res">Reset</button>
-        <button id="myButton_inc">Increase</button>
+    <div class="form-container">
+        <form>
+            <label for="number">Rock, paper, sizors game</label><br>
+            <label for="text">Pick one</label><br>
+            <label for="text" id="cpuPick"></label><br>
+            <label for="text" id="playerPick"></label><br>
+            <label for="text" id="resultText"></label><br>
+            <div class="button-container">
+                <button class="my-button" id="Rock">ROCK</button>
+                <button class="my-button" id="Paper">PEPER</button>
+                <button class="my-button" id="Scissors">SCISSORS</button>
+            </div>            
+        </form>
     </div>
     <script src="index.js"></script>
 </body>
