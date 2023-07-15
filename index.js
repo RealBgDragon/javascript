@@ -11,7 +11,9 @@ choiseBtns.forEach((button) =>
         event.preventDefault();
         playerPick = button.textContent;
         computerTurn();
-        playerText.textContent = "Player choise is: ${player}";
+        playerText.textContent = `Player choise is: ${player}`;
+        cpuText.textContent = `Player choise is: ${cpuPick}`;
+        resultText.textContent = checkWinner();
     })
 );
 
@@ -28,5 +30,17 @@ function computerTurn() {
         case 3:
             cpuPick = "SCISSORS";
             break;
+    }
+}
+
+function checkWinner() {
+    if ((playerPick = cpuPick)) {
+        return "Draw!";
+    } else if (cpuPick == "ROCK") {
+        return playerPick == "PAPER" ? "You win" : "You lose";
+    } else if (cpuPick == "PAPER") {
+        return playerPick == "SCISSORS" ? "You win" : "You lose";
+    } else if (cpuPick == "SCISSORS") {
+        return playerPick == "ROCK" ? "You win" : "You lose";
     }
 }
