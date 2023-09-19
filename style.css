@@ -1,9 +1,57 @@
-#myLabel {
-    display: block;
-    text-align: center;
-    font-size: 50px;
-}
-.button-container {
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f4ff;
     display: flex;
     justify-content: center;
+    align-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+button.my-button {
+    cursor: pointer;
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 5px;
+    transition: 0.3s;
+    background-size: 200% 100%;
+    transition: background-position 0.5s;
+    background-position: 100% 0;
+}
+
+button.my-button:hover {
+    background-position: 0 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#resultText {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #5b86e5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
 }
