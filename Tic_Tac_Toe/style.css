@@ -1,6 +1,6 @@
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #181818;
+    background-color: #f8f8ff;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -8,17 +8,16 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    color: #f0f0f0;
 }
 
 .button-container {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-gap: 10px;
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 15px;
-    background: #202020;
+    background: #fff;
 }
 
 .my-button {
@@ -30,22 +29,24 @@ body {
     font-weight: 600;
     transition: all 0.3s ease;
     cursor: pointer;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-    background-color: #252525;
-    color: #e0e0e0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
 }
 
 .my-button:hover {
-    background-color: #333333;
-    transform: translateY(-2px);
-    box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.2);
+    background-color: #e0e0e0;
+    transform: translateY(-2px); /* Small lift on hover */
+    box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.1);
 }
 
 .my-button:active {
-    transform: translateY(1px);
+    transform: translateY(
+        1px
+    ); /* Pushes the button slightly inward when clicked */
 }
 
-.main_label {
+.main_label,
+.winner_label {
     font-size: 36px;
     font-weight: 700;
     text-align: center;
@@ -53,5 +54,42 @@ body {
 }
 
 .winner_label {
+    color: blueviolet;
+}
+
+.theme-icon {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.theme-icon:hover {
+    transform: scale(1.1);
+}
+
+.dark-mode {
+    background-color: #181818;
+    color: #f0f0f0;
+}
+
+.dark-mode .button-container {
+    background: #202020;
+}
+
+.dark-mode .my-button {
+    background-color: #252525;
+    color: #e0e0e0;
+}
+
+.dark-mode .my-button:hover {
+    background-color: #333333;
+}
+
+.dark-mode .winner_label {
     color: #bb86fc;
 }

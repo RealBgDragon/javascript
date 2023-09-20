@@ -1,5 +1,6 @@
 const winner = $("#winner_label");
 const choiceBtns = document.querySelectorAll(".my-button");
+const themeToggle = document.getElementById("theme-toggle");
 
 let x = 0,
     z;
@@ -76,3 +77,15 @@ function winner_conditions() {
         $("#winner_label").text("It's a Draw!");
     }
 }
+
+themeToggle.addEventListener("click", function () {
+    let body = document.body;
+
+    if (body.classList.contains("dark-mode")) {
+        body.classList.remove("dark-mode");
+        themeToggle.textContent = "☀️"; // Sun icon for light mode
+    } else {
+        body.classList.add("dark-mode");
+        themeToggle.textContent = "🌙"; // Moon icon for dark mode
+    }
+});
