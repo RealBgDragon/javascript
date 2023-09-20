@@ -7,6 +7,7 @@ let x = 0,
 let win = false;
 let player1Pick, player2Pick;
 
+//the pressing of the button
 choiceBtns.forEach((button) =>
     button.addEventListener("click", (event) => {
         event.preventDefault();
@@ -20,6 +21,7 @@ choiceBtns.forEach((button) =>
     })
 );
 
+//player making move
 function player_move(z) {
     if (x % 2 === 0) {
         player1Pick = z;
@@ -31,6 +33,7 @@ function player_move(z) {
     x++;
 }
 
+//winner function
 function winner_conditions() {
     let buttonValues = [];
     choiceBtns.forEach((button) => {
@@ -49,6 +52,7 @@ function winner_conditions() {
         [2, 4, 6],
     ];
 
+    //determenign if there is a winner
     for (const combination of winningCombinations) {
         if (
             buttonValues[combination[0]] &&
@@ -57,13 +61,13 @@ function winner_conditions() {
         ) {
             win = true;
 
+            //picking the winner
             if (buttonValues[combination[0]] === "X") {
                 $("#winner_label").text("Player 1 Wins!");
             } else if (buttonValues[combination[0]] === "O") {
                 $("#winner_label").text("Player 2 Wins!");
             }
 
-            // Optionally, disable all buttons after finding a winner
             for (const btn of choiceBtns) {
                 btn.disabled = true;
             }
@@ -78,14 +82,58 @@ function winner_conditions() {
     }
 }
 
+//check on load
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = checkCookie("theme");
+
+    if (savedTheme) {
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark-mode");
+            themeToggle.textContent = "🌙";
+        } else {
+            document.body.classList.remove("dark-mode");
+            themeToggle.textContent = "☀️";
+        }
+    }
+});
+
+//light and dark mode
 themeToggle.addEventListener("click", function () {
     let body = document.body;
 
     if (body.classList.contains("dark-mode")) {
         body.classList.remove("dark-mode");
         themeToggle.textContent = "☀️"; // Sun icon for light mode
+        setCookie("theme", "light", 30); // for 30 days
     } else {
         body.classList.add("dark-mode");
         themeToggle.textContent = "🌙"; // Moon icon for dark mode
+        setCookie("theme", "dark", 30);
     }
 });
+
+//*making a cookie
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+//get the Cookie
+function getCookie(name) {
+    const value = "; " + document.cookie;
+    const parts = value.split("; " + name + "=");
+    if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
+function checkCookie(name) {
+    const theme = getCookie(name);
+    if (theme) {
+        return theme;
+    } else {
+        return false;
+    }
+}
