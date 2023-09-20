@@ -37,18 +37,42 @@ function winner_conditions() {
     });
     console.log(buttonValues);
 
-    let positions = [];
+    const winningCombinations = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+    ];
 
-    for (let i = 0; i < buttonValues.length; i++) {
-        if (buttonValues[i] === "X") {
-            positions.push(i);
+    for (const combination of winningCombinations) {
+        if (
+            buttonValues[combination[0]] &&
+            buttonValues[combination[0]] === buttonValues[combination[1]] &&
+            buttonValues[combination[1]] === buttonValues[combination[2]]
+        ) {
+            win = true;
+
+            if (buttonValues[combination[0]] === "X") {
+                $("#winner_label").text("Player 1 Wins!");
+            } else if (buttonValues[combination[0]] === "O") {
+                $("#winner_label").text("Player 2 Wins!");
+            }
+
+            // Optionally, disable all buttons after finding a winner
+            for (const btn of choiceBtns) {
+                btn.disabled = true;
+            }
+
+            break;
         }
     }
 
-    for (let i = 0; i < positions.length - 1; i++) {
-        if (!positions[i + 1] - positions[i] !== 1) {
-            win = true;
-            console.log(win);
-        }
+    // Check for a draw if all positions are occupied and there's no winner
+    if (!win && buttonValues.every((val) => val !== "")) {
+        $("#winner_label").text("It's a Draw!");
     }
 }

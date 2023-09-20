@@ -1,8 +1,10 @@
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #f4f4ff;
+    background-color: #f8f8ff;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -11,29 +13,43 @@ body {
 .button-container {
     display: grid;
     grid-template-columns: repeat(3, 100px);
-    grid-gap: 5px;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    margin: 50px auto;
+    grid-gap: 10px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff;
 }
 
 .my-button {
     width: 100px;
     height: 100px;
-    border: 1px solid #333;
+    border: none;
+    border-radius: 8px;
     font-size: 24px;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
 }
 
 .my-button:hover {
     background-color: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.1);
+}
+
+.my-button:active {
+    transform: translateY(1px);
 }
 
 .main_label {
     font-size: 36px;
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
-    display: block;
+    margin-bottom: 20px;
+}
+
+.winner_label {
+    color: blueviolet;
 }
