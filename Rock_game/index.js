@@ -1,7 +1,7 @@
 const playerText = $("#playerPick");
 const cpuText = $("#cpuPick");
 const resultText = $("#resultText");
-const choiseBtns = document.querySelectorAll(".my-button");
+const choiceBtns = document.querySelectorAll(".my-button");
 
 let cpuPick;
 let playerPick;
@@ -18,7 +18,7 @@ const gameRules = {
     SCISSORS: "PAPER",
 };
 
-choiseBtns.forEach((button) =>
+choiceBtns.forEach((button) =>
     button.addEventListener("click", (event) => {
         event.preventDefault();
         playerPick = button.textContent;
