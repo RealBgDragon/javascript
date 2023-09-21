@@ -75,19 +75,28 @@ body {
 .player-ai {
     position: absolute;
     bottom: 10px;
-    right: 1px;
+    right: 10px;
     background-color: #a8b2d1;
-    border-radius: 100%;
+    border-radius: 50%;
     height: 40px;
     width: 40px;
     border: none;
     font-size: 24px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .player-ai:hover {
     background-color: #e2e2f7;
+    transform: scale(1.05);
+}
+
+.player-ai:active {
+    background-color: #c9c9e0;
+    transform: scale(0.98);
 }
 
 .reset-button {
@@ -112,6 +121,19 @@ body {
 
 .reset-button:active {
     transform: translateY(1px);
+}
+
+.turn-label {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #ebebf3;
+    box-shadow: 0px 5px 10px rgba(150, 150, 200, 0.2);
+    color: #444;
+    transition: all 0.3s ease;
 }
 
 .dark-mode {
@@ -153,4 +175,10 @@ body {
 .dark-mode .reset-button:hover {
     background-color: #333333;
     box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .turn-label {
+    background-color: #252525;
+    color: #e0e0e0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }

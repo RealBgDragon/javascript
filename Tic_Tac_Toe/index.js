@@ -2,13 +2,14 @@ const winner = $("#winner_label");
 const choiceBtns = document.querySelectorAll(".my-button");
 const themeToggle = document.getElementById("theme-toggle");
 const player_ai_button = document.getElementById("player-ai");
+const reset = document.getElementById("reset-button");
 
-let x = 0,
-    z;
+let x = 0, // var for checking turns
+    z; //var for the player choise
 let win = false;
 let player1Pick, player2Pick;
-let mode;
-let random = 0;
+let mode; //ai or player mode
+let random = 0; //random number for the ai
 
 //the pressing of the button
 choiceBtns.forEach((button) =>
@@ -136,8 +137,18 @@ player_ai_button.addEventListener("click", function () {
     }
 });
 
-//TODO add a button to reset the field
-//$("#" + player1Pick).text("X");
+//* add a button to reset the field
+reset.addEventListener("click", function () {
+    choiceBtns.forEach((button) => {
+        $(button).text("");
+    });
+    x = 0;
+    $("#winner_label").text("");
+    win = false;
+    for (const btn of choiceBtns) {
+        btn.disabled = false;
+    }
+});
 
 //*making a cookie
 function setCookie(name, value, days) {
