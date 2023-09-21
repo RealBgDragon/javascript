@@ -72,6 +72,48 @@ body {
     transform: scale(1.1);
 }
 
+.player-ai {
+    position: absolute;
+    bottom: 10px;
+    right: 1px;
+    background-color: #a8b2d1;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.player-ai:hover {
+    background-color: #e2e2f7;
+}
+
+.reset-button {
+    padding: 12px 24px;
+    background-color: #dedee9;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(150, 150, 200, 0.2);
+    color: #444;
+    margin-top: 20px; /* Adjust this value if you want to change the spacing from other elements */
+}
+
+.reset-button:hover {
+    background-color: #cfcfd9;
+    transform: translateY(-2px);
+    box-shadow: 0px 7px 14px rgba(150, 150, 200, 0.2);
+}
+
+.reset-button:active {
+    transform: translateY(1px);
+}
+
 .dark-mode {
     background-color: #181818;
     color: #f0f0f0;
@@ -95,4 +137,20 @@ body {
 
 .dark-mode .winner_label {
     color: #bb86fc;
+}
+
+.dark-mode .player-ai {
+    background-color: #686868;
+    color: #e0e0e0;
+}
+
+.dark-mode .reset-button {
+    background-color: #252525;
+    color: #e0e0e0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .reset-button:hover {
+    background-color: #333333;
+    box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.2);
 }

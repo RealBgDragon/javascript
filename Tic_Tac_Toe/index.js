@@ -1,16 +1,20 @@
 const winner = $("#winner_label");
 const choiceBtns = document.querySelectorAll(".my-button");
 const themeToggle = document.getElementById("theme-toggle");
+const player_ai_button = document.getElementById("player-ai");
 
 let x = 0,
     z;
 let win = false;
 let player1Pick, player2Pick;
+let mode;
+let random = 0;
 
 //the pressing of the button
 choiceBtns.forEach((button) =>
     button.addEventListener("click", (event) => {
         event.preventDefault();
+        mode = player_ai_button.textContent;
         if (button.textContent === "") {
             player_move(button.id);
         } else {
@@ -26,7 +30,18 @@ function player_move(z) {
     if (x % 2 === 0) {
         player1Pick = z;
         $("#" + player1Pick).text("X");
-    } else {
+        winner_conditions();
+        if (mode === "AI" && win === false) {
+            do {
+                random = Math.floor(Math.random() * 9) + 1;
+                console.log(random);
+            } while (
+                document.getElementById("button" + random).textContent !== ""
+            );
+            $("#button" + random).text("O");
+            x++;
+        }
+    } else if (x % 2 !== 0 && mode === "P2") {
         player2Pick = z;
         $("#" + player2Pick).text("O");
     }
@@ -111,6 +126,18 @@ themeToggle.addEventListener("click", function () {
         setCookie("theme", "dark", 30);
     }
 });
+
+player_ai_button.addEventListener("click", function () {
+    if (player_ai_button.textContent === "P2") {
+        player_ai_button.textContent = "AI";
+        console.log("AI");
+    } else {
+        player_ai_button.textContent = "P2";
+    }
+});
+
+//TODO add a button to reset the field
+//$("#" + player1Pick).text("X");
 
 //*making a cookie
 function setCookie(name, value, days) {
