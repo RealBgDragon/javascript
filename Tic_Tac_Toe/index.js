@@ -27,12 +27,14 @@ choiceBtns.forEach((button) =>
 );
 
 //player making move
-function player_move(z) {
+async function player_move(z) {
     if (x % 2 === 0) {
         player1Pick = z;
+        $("#turn-label").text("Player O's Turn");
         $("#" + player1Pick).text("X");
         winner_conditions();
         if (mode === "AI" && win === false) {
+            await delay(500);
             do {
                 random = Math.floor(Math.random() * 9) + 1;
                 console.log(random);
@@ -40,11 +42,13 @@ function player_move(z) {
                 document.getElementById("button" + random).textContent !== ""
             );
             $("#button" + random).text("O");
+            $("#turn-label").text("Player X's Turn");
             x++;
         }
     } else if (x % 2 !== 0 && mode === "P2") {
         player2Pick = z;
         $("#" + player2Pick).text("O");
+        $("#turn-label").text("Player X's Turn");
     }
     x++;
 }
@@ -174,4 +178,8 @@ function checkCookie(name) {
     } else {
         return false;
     }
+}
+
+function delay(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
 }

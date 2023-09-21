@@ -45,6 +45,18 @@ body {
     transform: translateY(1px);
 }
 
+/*!SIMULATIN FOR THE AI*/
+.my-button-hover {
+    background-color: #cfcfd9;
+    transform: translateY(-2px);
+    box-shadow: 0px 7px 14px rgba(150, 150, 200, 0.2);
+}
+
+.my-button-active {
+    transform: translateY(1px);
+}
+/*!SUMULATION FOR THE AI END*/
+
 .main_label,
 .winner_label {
     font-size: 36px;
