@@ -3,6 +3,7 @@ const choiceBtns = document.querySelectorAll(".my-button");
 const themeToggle = document.getElementById("theme-toggle");
 const player_ai_button = document.getElementById("player-ai");
 const reset = document.getElementById("reset-button");
+const difficulty_button = document.getElementById("difficulty");
 
 let x = 0, // var for checking turns
     z; //var for the player choise
@@ -10,6 +11,7 @@ let win = false;
 let player1Pick, player2Pick;
 let mode; //ai or player mode
 let random = 0; //random number for the ai
+let difficulty = 0;
 
 //the pressing of the button
 choiceBtns.forEach((button) =>
@@ -35,15 +37,22 @@ async function player_move(z) {
         winner_conditions();
         if (mode === "AI" && win === false) {
             await delay(500);
-            do {
-                random = Math.floor(Math.random() * 9) + 1;
-                console.log(random);
-            } while (
-                document.getElementById("button" + random).textContent !== ""
-            );
-            $("#button" + random).text("O");
-            $("#turn-label").text("Player X's Turn");
-            x++;
+            if (difficulty === 0) {
+                do {
+                    random = Math.floor(Math.random() * 9) + 1;
+                    console.log(random);
+                } while (
+                    document.getElementById("button" + random).textContent !==
+                    ""
+                );
+                $("#button" + random).text("O");
+                $("#turn-label").text("Player X's Turn");
+                x++;
+            } else if (difficulty === 1) {
+                console.log("difficulty level 2");
+            } else {
+                console.log("difficulty level 3");
+            }
         }
     } else if (x % 2 !== 0 && mode === "P2") {
         player2Pick = z;
@@ -164,6 +173,21 @@ function setCookie(name, value, days) {
     }
     document.cookie = name + "=" + value + expires + "; path=/";
 }
+
+//add difficulty function
+difficulty_button.addEventListener("click", function () {
+    if (difficulty === 0) {
+        difficulty = 1;
+        difficulty_button.textContent = "AI difficulty: Medium";
+    } else if (difficulty === 1) {
+        difficulty = 2;
+        difficulty_button.textContent = "AI difficulty: Hard";
+    } else {
+        difficulty = 0;
+        difficulty_button.textContent = "AI difficulty: Easy";
+    }
+});
+
 //get the Cookie
 function getCookie(name) {
     const value = "; " + document.cookie;

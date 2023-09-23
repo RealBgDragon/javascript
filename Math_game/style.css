@@ -1,0 +1,97 @@
+body {
+    font-family: "Roboto", sans-serif; /* Using Roboto, a modern font. You might want to link it from Google Fonts in your HTML. */
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #4a90e2; /* Updated shade of blue */
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05); /* subtle shadow for depth */
+}
+
+main {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px; /* rounded corners */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* increased shadow for more depth */
+}
+
+.generator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settings,
+.problem,
+.controls,
+.feedback {
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #d6d8da;
+    border-radius: 8px;
+    background-color: #f7f9fc;
+}
+
+.problem p {
+    font-size: 28px;
+    font-weight: 500;
+    color: #4a4a4a;
+}
+
+.controls input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #d6d8da;
+    border-radius: 8px;
+    outline: none;
+    width: 200px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s; /* Added transform for a subtle click effect */
+}
+
+button:hover {
+    background-color: #357abd;
+    transform: scale(1.05); /* subtle zoom effect on hover */
+}
+
+button:active {
+    transform: scale(0.95); /* subtle click effect */
+}
+
+.feedback {
+    color: #e94e77; /* a shade of red */
+    font-weight: bold;
+}
+
+.correct {
+    color: #28a745; /* green color for correct answers */
+}

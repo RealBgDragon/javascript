@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Problem Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Math Problem Generator</h1>
+    </header>
+
+    <main>
+        <section class="generator">
+            <div class="settings">
+                <label for="difficulty">Choose Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+
+            <div class="problem">
+                <p id="mathProblem">Click 'Generate' to start!</p>
+            </div>
+
+            <div class="controls">
+                <button id="generateBtn">Generate Problem</button>
+                <input id="userAnswer" placeholder="Your answer...">
+                <button id="checkAnswerBtn">Check Answer</button>
+            </div>
+
+            <div class="feedback">
+                <p id="feedbackMsg"></p>
+            </div>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

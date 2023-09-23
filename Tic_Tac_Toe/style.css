@@ -143,9 +143,31 @@ body {
     padding: 10px 20px;
     border-radius: 8px;
     background-color: #ebebf3;
+    color: #444;
+}
+
+.difficulty {
+    font-size: 18px;
+    padding: 12px 24px;
+    background-color: #dedee9;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
     box-shadow: 0px 5px 10px rgba(150, 150, 200, 0.2);
     color: #444;
-    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.difficulty:hover {
+    background-color: #cfcfd9;
+    transform: translateY(-2px);
+    box-shadow: 0px 7px 14px rgba(150, 150, 200, 0.2);
+}
+
+.difficulty:active {
+    transform: translateY(1px);
 }
 
 .dark-mode {
@@ -192,5 +214,15 @@ body {
 .dark-mode .turn-label {
     background-color: #252525;
     color: #e0e0e0;
+}
+
+.dark-mode .difficulty {
+    background-color: #252525;
+    color: #e0e0e0;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .difficulty:hover {
+    background-color: #333333;
+    box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.2);
 }
