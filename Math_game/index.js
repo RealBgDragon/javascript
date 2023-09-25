@@ -3,10 +3,13 @@ const problem_label = document.getElementById("mathProblem");
 const check_answer = document.getElementById("checkAnswerBtn");
 const user_answer = document.getElementById("userAnswer");
 const user_feedback = document.getElementById("feedbackMsg");
+const dropdown = document.getElementById("difficulty");
 
 let a, b;
+let difficulty;
 
 generate_button.addEventListener("click", function () {
+    difficulty = dropdown.value;
     generate_problem();
     a = generate_problem();
     console.log(a);
@@ -30,7 +33,7 @@ function generate_problem() {
         b = Math.floor(Math.random() * (10 - 1) + 1);
         c = a * b;
         problem_label.textContent = "x * " + b + " = " + c;
-    } else {
+    } else if (operation === "/") {
         a = Math.floor(Math.random() * (10 - 1) + 1);
         b = Math.floor(Math.random() * (10 - 1) + 1);
         c = a / b;
