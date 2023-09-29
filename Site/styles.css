@@ -1,0 +1,110 @@
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    font-family: "Roboto", sans-serif;
+    font-size: 36px;
+    background: linear-gradient(to right, #20c7c0, #1b9dd7);
+    color: #f2f2f2;
+    position: relative;
+    height: 175px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    padding: 20px 50px;
+}
+
+.auth-links {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 0px;
+}
+
+.auth-links a {
+    font-size: 12px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    color: #1b9dd7;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #d5d5d5;
+}
+
+nav {
+    background-color: rgb(0, 0, 60);
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    background: linear-gradient(to right, #20c7c0, #1b9dd7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+main {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    flex: 0 0 auto;
+    /*width: 200px;*/
+    width: max(22.5vw, 200px);
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.product h2 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.price {
+    color: #95e426;
+    margin-bottom: 10px;
+}
+
+.characteristics {
+    list-style-type: none;
+    padding: 0;
+}
