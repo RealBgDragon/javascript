@@ -95,3 +95,76 @@ button:active {
 .correct {
     color: #28a745; /* green color for correct answers */
 }
+
+.theme-icon {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.theme-icon:hover {
+    transform: scale(1.2);
+    background-color: transparent;
+}
+
+.theme-icon:active {
+    transform: scale(0.9);
+    background-color: transparent;
+}
+
+.dark-mode {
+    background-color: #202124;
+    color: #e8eaed;
+}
+
+.dark-mode header {
+    background-color: #1c2a39;
+    color: #e1e1e1;
+}
+
+.dark-mode main {
+    background-color: #2b2e33;
+    border: 1px solid #414549;
+}
+
+.dark-mode select {
+    background-color: #2b2e33;
+    color: #e8eaed; /* same as body text color for uniformity */
+    border-color: #414549;
+}
+
+.dark-mode .problem p {
+    color: #e1e1e1;
+}
+
+.dark-mode .controls input {
+    background-color: #2b2e33;
+    color: #e8eaed;
+    border-color: #414549;
+}
+
+.dark-mode button {
+    background-color: #1c2a39; /* Using the same color as header for uniformity */
+    color: #e1e1e1; /* light color text for the button */
+}
+
+.dark-mode button:hover {
+    background-color: #142433; /* slightly darker on hover */
+}
+
+.dark-mode .feedback {
+    color: #f28b82; /* reddish-pink but slightly faded to suit dark theme */
+}
+
+.dark-mode .correct {
+    color: #55a85d; /* muted green to suit dark theme */
+}
+
+.dark-mode .theme-icon {
+    color: #e1e1e1; /* making sure the theme icon is visible on dark background */
+}
