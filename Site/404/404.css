@@ -5,9 +5,16 @@ html {
     overflow: hidden; /* Hide overflow to ensure no scrollbars */
 }
 
-img {
+.image-container {
+    position: relative;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     position: absolute;
     top: 0;
@@ -27,14 +34,15 @@ img {
     transition: background-color 0.3s;
 
     position: absolute;
-    bottom: 22vh;
-    right: 42vw;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .back-home:hover {
-    background-color: #1188be;
+    filter: brightness(0.9) saturate(1.2); /* Slightly darken and increase saturation */
 }
 
 .back-home:active {
-    background-color: #0a5e85;
+    filter: brightness(0.7) saturate(1.4); /* Darken more and further increase saturation */
 }
