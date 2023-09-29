@@ -80,7 +80,7 @@ main {
 .product {
     flex: 0 0 auto;
     /*width: 200px;*/
-    width: max(22.5vw, 200px);
+    width: max(22.6vw, 200px);
     border: 1px solid #ddd;
     padding: 10px;
     border-radius: 10px;
