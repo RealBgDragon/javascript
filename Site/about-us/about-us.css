@@ -17,6 +17,12 @@ header {
     padding: 20px 50px;
 }
 
+header img {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
 .auth-links {
     position: absolute;
     top: 10px;
@@ -73,7 +79,7 @@ nav a {
     -webkit-background-clip: text, text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    transition: background-position 0.3s, color 0.3s;
+    transition: bacground-positon 0.3s, color 0.3s;
     background-size: 200% 100%;
     background-position: 100% 0;
 }
@@ -82,57 +88,61 @@ nav a:hover {
     background-position: 0 0;
 }
 
-main {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px;
+main h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 36px;
+    margin-left: 100px;
+    color: #1188be;
 }
 
-.product {
-    flex: 0 0 auto;
-    /*width: 200px;*/
-    width: max(23vw, 200px);
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #f9f9f9;
+main hr {
+    width: 95%;
+    border: none;
+    border-top: 1px solid #1b9dd7;
+    margin: 20px auto;
 }
 
-.product img {
-    width: 100%;
+footer {
+    position: absolute;
     height: auto;
-    display: block;
-    margin-bottom: 10px;
+    width: 100vw;
+    bottom: 0;
+    background-color: rgb(0, 0, 60); /* Matching the nav bar color */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.05); /* Shadow pointing upwards */
 }
 
-.product h2 {
-    font-size: 1.2em;
-    margin-bottom: 5px;
+.footer-links {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.price {
-    color: #95e426;
-    margin-bottom: 10px;
+.footer-links a {
+    text-decoration: none;
+    color: #f2f2f2; /* Matching header text color */
+    transition: color 0.3s;
 }
 
-.characteristics {
-    list-style-type: none;
-    padding: 0;
+.footer-links a:hover {
+    color: #20c7c0; /* Using the gradient color for hover */
 }
 
-/*scroll bar*/
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(to right, #20c7c0, #1b9dd7);
-    border-radius: 10px;
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
-::-webkit-scrollbar-track {
-    background: rgba(0, 0, 60, 0.1);
-    border-radius: 10px;
+
+.footer-logo img {
+    width: 50px; /* adjust as per your logo size */
+    height: auto;
 }
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to right, #2adcd0, #2bacdf);
-}
-::-webkit-scrollbar {
-    width: 10px;
+
+.footer-logo p {
+    font-size: 12px;
+    color: #f2f2f2; /* Matching header text color */
 }
