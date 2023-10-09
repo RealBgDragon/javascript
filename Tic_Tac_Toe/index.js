@@ -1,4 +1,3 @@
-// program
 const winner = $("#winner_label");
 const choiceBtns = document.querySelectorAll(".my-button");
 const themeToggle = document.getElementById("theme-toggle");

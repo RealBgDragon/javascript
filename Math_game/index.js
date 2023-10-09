@@ -9,37 +9,82 @@ const themeToggle = document.getElementById("theme-toggle");
 let a, b;
 let difficulty;
 
-generate_button.addEventListener("click", function () {
-    difficulty = dropdown.value;
-    generate_problem();
-    a = generate_problem();
-    console.log(a);
-});
-
 function generate_problem() {
     const operators = ["+", "-", "*", "/"];
     let operation = operators[Math.floor(Math.random() * operators.length)];
+    console.log(difficulty);
+
+    switch (difficulty) {
+        case "easy":
+            if (operation === "+" || operation === "-") {
+                a = Math.floor(Math.random() * 101);
+                b = Math.floor(Math.random() * 101);
+            } else {
+                a = Math.floor(Math.random() * 11);
+                b = Math.floor(Math.random() * 11);
+            }
+            break;
+        case "medium":
+            if (operation === "+" || operation === "-") {
+                a = Math.floor(Math.random() * 501);
+                b = Math.floor(Math.random() * 501);
+            } else {
+                a = Math.floor(Math.random() * 21);
+                b = Math.floor(Math.random() * 21);
+            }
+            break;
+        case "hard":
+            switch (operation) {
+                case "exponent":
+                    a = Math.floor(Math.random() * 6) + 2; // 2 to 7
+                    b = Math.floor(Math.random() * 3) + 2; // 2 to 4
+                    c = Math.pow(a, b);
+                    problem_label.textContent = "x^" + b + " = " + c;
+                    break;
+                case "root":
+                    a = Math.floor(Math.random() * 15) + 2; // 2 to 16
+                    c = a * a;
+                    problem_label.textContent = "√x = " + a;
+                    break;
+                case "equation":
+                    a = Math.floor(Math.random() * 10) + 1; // 1 to 10
+                    b = Math.floor(Math.random() * 10) + 1; // 1 to 10
+                    let d = Math.floor(Math.random() * 10) + 1; // another random number
+                    c = a * d + b;
+                    problem_label.textContent = a + "x + " + b + " = " + c;
+                    break;
+                default:
+                    a = Math.floor(Math.random() * 1001);
+                    b = Math.floor(Math.random() * 1001);
+                    break;
+            }
+            break;
+        default:
+            console.error("Invalid difficulty level");
+            return;
+    }
+
     if (operation === "+") {
-        a = Math.floor(Math.random() * (100 - 1) + 1);
-        b = Math.floor(Math.random() * (100 - 1) + 1);
         c = a + b;
         problem_label.textContent = "x + " + b + " = " + c;
     } else if (operation === "-") {
-        a = Math.floor(Math.random() * (100 - 1) + 1);
-        b = Math.floor(Math.random() * (100 - 1) + 1);
         c = a - b;
         problem_label.textContent = "x - " + b + " = " + c;
     } else if (operation === "*") {
-        a = Math.floor(Math.random() * (10 - 1) + 1);
-        b = Math.floor(Math.random() * (10 - 1) + 1);
+        if (difficulty === "hard") {
+            generate_problem();
+        }
         c = a * b;
         problem_label.textContent = "x * " + b + " = " + c;
     } else if (operation === "/") {
-        a = Math.floor(Math.random() * (10 - 1) + 1);
-        b = Math.floor(Math.random() * (10 - 1) + 1);
+        while (b === 0) {
+            // Ensure b isn't 0 for division.
+            b = Math.floor(Math.random() * 21);
+        }
         c = a / b;
-        problem_label.textContent = "x / " + b + " = " + c;
+        problem_label.textContent = "x / " + b + " = " + c.toFixed(2); // Display up to 2 decimal places
     }
+    // The "exponent", "root", and "equation" cases are already handled above.
     return a;
 }
 
@@ -101,3 +146,8 @@ function checkCookie(name) {
 function delay(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+generate_button.addEventListener("click", function () {
+    difficulty = dropdown.value;
+    generate_problem();
+});
