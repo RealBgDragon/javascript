@@ -1,3 +1,4 @@
+// program
 const winner = $("#winner_label");
 const choiceBtns = document.querySelectorAll(".my-button");
 const themeToggle = document.getElementById("theme-toggle");
@@ -48,6 +49,7 @@ async function player_move(z) {
                 $("#button" + random).text("O");
                 $("#turn-label").text("Player X's Turn");
                 x++;
+                winner_conditions();
             } else if (difficulty === 1) {
                 console.log("difficulty level 2");
             } else {
@@ -93,8 +95,10 @@ function winner_conditions() {
             //picking the winner
             if (buttonValues[combination[0]] === "X") {
                 $("#winner_label").text("Player 1 Wins!");
-            } else if (buttonValues[combination[0]] === "O") {
+            } else if (buttonValues[combination[0]] === "O" && mode === "P2") {
                 $("#winner_label").text("Player 2 Wins!");
+            } else if (buttonValues[combination[0]] === "O" && mode === "AI") {
+                $("#winner_label").text("AI Wins!");
             }
 
             for (const btn of choiceBtns) {
