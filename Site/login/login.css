@@ -1,0 +1,218 @@
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f8fa;
+}
+
+header {
+    font-family: "Roboto", sans-serif;
+    font-size: 36px;
+    background: linear-gradient(to right, #20c7c0, #1b9dd7);
+    color: #f2f2f2;
+    position: relative;
+    height: 175px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    padding: 20px 50px;
+}
+
+header img {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.auth-links {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 0px;
+}
+
+.auth-links a {
+    position: relative;
+    font-size: 12px;
+    background-color: transparent;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    height: max(0.5vw, 11px);
+    width: auto;
+    transition: background-color 0.3s;
+}
+
+.user-link:hover {
+    background-color: #1188be;
+}
+
+.user-link:active {
+    background-color: #0a5e85;
+}
+
+nav {
+    background-color: rgb(0, 0, 60);
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    background-image: linear-gradient(to right, transparent, transparent),
+        linear-gradient(to right, #20c7c0, #1b9dd7);
+    background-clip: text, text;
+    -webkit-background-clip: text, text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 0.3s, color 0.3s;
+    background-size: 200% 100%;
+    background-position: 100% 0;
+}
+
+nav a:hover {
+    background-position: 0 0;
+}
+
+.container {
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+main hr {
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+main h2 {
+    margin-left: 7vw;
+}
+
+.login {
+    margin-right: auto;
+    text-align: center;
+}
+
+.login h2 {
+    margin-left: auto;
+    text-align: left;
+}
+
+.login h3 {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f8fa;
+    font-family: "Roboto", sans-serif;
+    transition: border-color 0.3s;
+}
+
+.login input[type="text"]:focus,
+.login input[type="password"]:focus {
+    border-color: #1b9dd7;
+    outline: none;
+}
+
+.login input[type="submit"] {
+    background: linear-gradient(to right, #20c7c0, #1b9dd7);
+    color: #f2f2f2;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    transition: background 0.3s;
+}
+
+.login input[type="submit"]:hover {
+    background: linear-gradient(to right, #1b9dd7, #20c7c0);
+}
+
+.login input[type="submit"]:active {
+    background: #1188be;
+}
+
+.register {
+    margin-left: auto;
+    text-align: center;
+}
+
+.register a {
+    text-decoration: none;
+    color: black;
+    background-color: #1188be;
+    border: 1px #0a5e85;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+footer {
+    position: absolute;
+    height: auto;
+    width: 100vw;
+    bottom: 0;
+    background-color: rgb(0, 0, 60); /* Matching the nav bar color */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.05); /* Shadow pointing upwards */
+}
+
+.footer-links {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #f2f2f2; /* Matching header text color */
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #20c7c0; /* Using the gradient color for hover */
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-logo img {
+    width: 50px; /* adjust as per your logo size */
+    height: auto;
+}
+
+.footer-logo p {
+    font-size: 12px;
+    color: #f2f2f2; /* Matching header text color */
+}
