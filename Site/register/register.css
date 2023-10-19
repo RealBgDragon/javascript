@@ -169,6 +169,14 @@ main h2 {
     background: #20c7c0;
 }
 
+.error-message {
+    display: none;
+    color: #d32f2f;
+    font-size: 20px;
+    margin-top: 5px;
+    text-align: left;
+}
+
 .register {
     margin-left: auto;
     text-align: center;
