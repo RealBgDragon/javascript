@@ -108,8 +108,11 @@ main h2 {
 
 .login {
     position: relative;
+    height: 70vh;
     margin-right: 5vw;
     text-align: center;
+    border-right: 1px solid #ccc;
+    padding-right: 12vw;
 }
 
 @media screen and (max-width: 600px) {
@@ -187,12 +190,13 @@ main h2 {
 }
 
 .register a {
-    position: relative;
+    display: inline-block;
     text-decoration: none;
     color: #f2f2f2;
     background: linear-gradient(to right, #20c7c0, #1b9dd7);
     border: none;
     padding: 10px 20px;
+    margin-bottom: 50px;
     border-radius: 5px;
     transition: background-position 0.3s, color 0.3s;
     background-size: 200% 100%;
@@ -205,6 +209,10 @@ main h2 {
 
 .register a:active {
     background: #20c7c0;
+}
+
+.register p {
+    text-align: left;
 }
 
 footer {
@@ -250,4 +258,23 @@ footer {
 .footer-logo p {
     font-size: 12px;
     color: #f2f2f2;
+}
+
+/*TODO try to make it look like an arrow*/
+.modal-body {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 140px;
+    border: 1px solid #ccc;
+    background-color: #f5f8fa;
+    padding: 10px;
+    border-radius: 5px;
+    width: 350px;
+    z-index: 10;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#password:hover + .modal-body {
+    display: block;
 }

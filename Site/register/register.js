@@ -1,20 +1,74 @@
+// const for password match
 const password = $("#password");
 const repassword = $("#repassword");
-const submit = $("#submit");
 const passwordError = $("#passwordError");
+const submit = $("#submit");
+// end of const for password match
 
-submit.on("click", function (event) {
-    event.preventDefault();
+function buttonDisable() {
+    submit.prop("disabled", true);
+}
+
+function buttonEnable() {
+    submit.prop("disabled", false);
+}
+
+$("#password, #repassword").on("focus input", function () {
     if (password.val() === repassword.val()) {
         // continue to register
         passwordError.hide();
-        //! DO NOT FORGET TO REMOVE PRINT
-        console.log("valid");
-        return;
+        buttonEnable();
     } else {
         passwordError.text("Passwords do not match!").show();
-        passwordError;
-        //! DO NOT FORGET TO REMOVE PRINT
-        console.log("not valid");
+        buttonDisable();
     }
+});
+
+// const for password check
+const capitalLetterRequirement = $("#capitalLetter");
+const numberRequirement = $("#number");
+const modal = $("#myModal");
+const lettars = $("#lettars");
+const modalBody = $(".modal-body");
+// end of const for password check
+
+password.on("focus input", function () {
+    modalBody.show();
+
+    if (/[A-Z]/.test($(this).val())) {
+        capitalLetterRequirement.css("color", "green");
+    } else {
+        capitalLetterRequirement.css("color", "red");
+    }
+
+    if (/[0-9]/.test($(this).val())) {
+        numberRequirement.css("color", "green");
+    } else {
+        numberRequirement.css("color", "red");
+    }
+
+    if (password.val().length < 8) {
+        lettars.css("color", "red");
+    } else {
+        lettars.css("color", "green");
+    }
+});
+
+// When losing focus
+password.on("blur", function () {
+    if (!password.is(":hover")) {
+        modalBody.hide();
+    }
+});
+
+// Hover tooltip stays visible even after the input loses focus
+password.hover(null, function () {
+    if (!password.is(":focus")) {
+        modalBody.hide();
+    }
+});
+
+submit.on("click", function (event) {
+    event.preventDefault();
+    console.log("button clicked");
 });
