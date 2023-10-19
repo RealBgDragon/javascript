@@ -212,10 +212,10 @@ footer {
     height: auto;
     width: 100vw;
     bottom: 0;
-    background-color: rgb(0, 0, 60); /* Matching the nav bar color */
+    background-color: rgb(0, 0, 60);
     padding: 20px 0;
     text-align: center;
-    box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.05); /* Shadow pointing upwards */
+    box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .footer-links {
@@ -227,12 +227,12 @@ footer {
 
 .footer-links a {
     text-decoration: none;
-    color: #f2f2f2; /* Matching header text color */
+    color: #f2f2f2;
     transition: color 0.3s;
 }
 
 .footer-links a:hover {
-    color: #20c7c0; /* Using the gradient color for hover */
+    color: #20c7c0;
 }
 
 .footer-logo {
@@ -243,11 +243,11 @@ footer {
 }
 
 .footer-logo img {
-    width: 50px; /* adjust as per your logo size */
+    width: 50px;
     height: auto;
 }
 
 .footer-logo p {
     font-size: 12px;
-    color: #f2f2f2; /* Matching header text color */
+    color: #f2f2f2;
 }

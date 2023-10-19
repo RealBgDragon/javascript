@@ -2,7 +2,7 @@ body,
 html {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Hide overflow to ensure no scrollbars */
+    overflow: hidden;
 }
 
 .image-container {
@@ -40,9 +40,9 @@ img {
 }
 
 .back-home:hover {
-    filter: brightness(0.9) saturate(1.2); /* Slightly darken and increase saturation */
+    filter: brightness(0.9) saturate(1.2);
 }
 
 .back-home:active {
-    filter: brightness(0.7) saturate(1.4); /* Darken more and further increase saturation */
+    filter: brightness(0.7) saturate(1.4);
 }
