@@ -1,8 +1,10 @@
 body {
     font-family: "Roboto", sans-serif;
+    height: 100vh;
     margin: 0;
     padding: 0;
     background-color: #f5f8fa;
+    overflow-x: hidden;
 }
 
 header {
@@ -90,14 +92,15 @@ nav a:hover {
 
 main {
     display: flex;
-    overflow-x: auto;
     gap: 20px;
     padding: 20px;
+    height: 100vw;
 }
 
 .product {
+    overflow-x: auto;
     flex: 0 0 auto;
-    /*width: 200px;*/
+    height: 500px;
     width: max(23vw, 200px);
     border: 1px solid #ddd;
     padding: 10px;
@@ -144,10 +147,9 @@ main {
 }
 
 footer {
-    position: absolute;
     height: auto;
     width: 100vw;
-    bottom: 0;
+    margin-top: 20px;
     background-color: rgb(0, 0, 60);
     padding: 20px 0;
     text-align: center;
