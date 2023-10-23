@@ -103,6 +103,8 @@ main hr {
 }
 
 footer {
+    position: absolute;
+    bottom: 0;
     height: auto;
     width: 100vw;
     margin-top: 20px;
