@@ -12,7 +12,7 @@ header {
     background: linear-gradient(to right, #20c7c0, #1b9dd7);
     color: #f2f2f2;
     position: relative;
-    height: 175px;
+    height: 150px; /**changed from 175px revert if needed */
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
     text-align: center;
     padding: 20px 50px;
@@ -114,12 +114,6 @@ main h2 {
     text-align: center;
     border-right: 1px solid #ccc;
     padding-right: 12vw;
-}
-
-@media screen and (max-width: 600px) {
-    .login {
-        text-align: center;
-    }
 }
 
 .login h2 {
@@ -277,4 +271,25 @@ footer {
 
 #password:hover + .modal-body {
     display: block;
+}
+
+@media screen and (max-width: 600px) {
+    header img {
+        height: auto;
+        width: 200px;
+    }
+    .login {
+        margin-right: 0;
+        padding-right: 0;
+        text-align: center;
+        border: none;
+    }
+    .login input[type="text"],
+    .login input[type="password"] {
+        width: 300px;
+    }
+
+    .register {
+        display: none;
+    }
 }

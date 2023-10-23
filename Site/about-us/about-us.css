@@ -11,7 +11,7 @@ header {
     background: linear-gradient(to right, #20c7c0, #1b9dd7);
     color: #f2f2f2;
     position: relative;
-    height: 175px;
+    height: 150px; /**changed from 175px revert if needed */
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
     text-align: center;
     padding: 20px 50px;
@@ -146,4 +146,19 @@ footer {
 .footer-logo p {
     font-size: 12px;
     color: #f2f2f2;
+}
+
+@media screen and (max-width: 600px) {
+    header img {
+        height: auto;
+        width: 200px;
+    }
+
+    main h1 {
+        margin-left: 10px;
+    }
+
+    main hr {
+        width: 95%;
+    }
 }
