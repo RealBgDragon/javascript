@@ -1,6 +1,6 @@
 // const for password match
 const password = $("#password");
-const repassword = $("#repassword");
+const rePassword = $("#repassword");
 const passwordError = $("#passwordError");
 const submit = $("#submit");
 // end of const for password match
@@ -14,7 +14,7 @@ function buttonEnable() {
 }
 
 $("#password, #repassword").on("focus input", function () {
-    if (password.val() === repassword.val()) {
+    if (password.val() === rePassword.val()) {
         // continue to register
         passwordError.hide();
         buttonEnable();
@@ -25,7 +25,7 @@ $("#password, #repassword").on("focus input", function () {
 });
 
 // const for password check
-const capitalLetterRequirement = $("#capitalLetter");
+const capitalRequirement = $("#capitalLetter");
 const numberRequirement = $("#number");
 const modal = $("#myModal");
 const lettars = $("#lettars");
@@ -36,9 +36,9 @@ password.on("focus input", function () {
     modalBody.show();
 
     if (/[A-Z]/.test($(this).val())) {
-        capitalLetterRequirement.css("color", "green");
+        capitalRequirement.css("color", "green");
     } else {
-        capitalLetterRequirement.css("color", "red");
+        capitalRequirement.css("color", "red");
     }
 
     if (/[0-9]/.test($(this).val())) {
