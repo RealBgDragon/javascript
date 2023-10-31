@@ -13,8 +13,40 @@ function buttonEnable() {
     submit.prop("disabled", false);
 }
 
+if (password.val() === "") {
+    buttonDisable();
+}
+
+function PasswordCheck() {
+    if (/[A-Z]/.test(password.val())) {
+        capitalRequirement.css("color", "green");
+        buttonEnable();
+    } else {
+        capitalRequirement.css("color", "red");
+        buttonDisable();
+    }
+
+    if (/[0-9]/.test(password.val())) {
+        numberRequirement.css("color", "green");
+        buttonEnable();
+    } else {
+        numberRequirement.css("color", "red");
+        buttonDisable();
+    }
+
+    if (password.val().length >= 8) {
+        letters.css("color", "green");
+        buttonEnable();
+    } else {
+        letters.css("color", "red");
+        buttonDisable();
+    }
+}
+
+//TODO ADD a function to check for ANY empty fields
+
 $("#password, #repassword").on("focus input", function () {
-    if (password.val() === rePassword.val()) {
+    if (password.val() === rePassword.val() && password.val() !== "") {
         // continue to register
         passwordError.hide();
         buttonEnable();
@@ -22,36 +54,20 @@ $("#password, #repassword").on("focus input", function () {
         passwordError.text("Passwords do not match!").show();
         buttonDisable();
     }
+    PasswordCheck();
 });
 
 // const for password check
 const capitalRequirement = $("#capitalLetter");
 const numberRequirement = $("#number");
 const modal = $("#myModal");
-const lettars = $("#lettars");
+const letters = $("#letters");
 const modalBody = $(".modal-body");
 // end of const for password check
 
 password.on("focus input", function () {
     modalBody.show();
-
-    if (/[A-Z]/.test($(this).val())) {
-        capitalRequirement.css("color", "green");
-    } else {
-        capitalRequirement.css("color", "red");
-    }
-
-    if (/[0-9]/.test($(this).val())) {
-        numberRequirement.css("color", "green");
-    } else {
-        numberRequirement.css("color", "red");
-    }
-
-    if (password.val().length < 8) {
-        lettars.css("color", "red");
-    } else {
-        lettars.css("color", "green");
-    }
+    PasswordCheck();
 });
 
 // When losing focus

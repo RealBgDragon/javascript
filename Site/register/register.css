@@ -108,8 +108,8 @@ main h2 {
 }
 
 .login {
-    position: relative;
     height: auto;
+    position: relative;
     margin-right: 5vw;
     text-align: center;
     border-right: 1px solid #ccc;
@@ -208,6 +208,7 @@ main h2 {
 
 .register p {
     text-align: left;
+    margin-left: 10%;
 }
 
 footer {

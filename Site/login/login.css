@@ -1,9 +1,9 @@
 body {
+    overflow-x: hidden;
     font-family: "Roboto", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f5f8fa;
-    overflow-x: hidden;
 }
 
 header {
@@ -177,12 +177,13 @@ main h2 {
 }
 
 .register a {
-    position: relative;
+    display: inline-block;
     text-decoration: none;
     color: #f2f2f2;
     background: linear-gradient(to right, #20c7c0, #1b9dd7);
     border: none;
     padding: 10px 20px;
+    margin-bottom: 50px;
     border-radius: 5px;
     transition: background-position 0.3s, color 0.3s;
     background-size: 200% 100%;
@@ -195,6 +196,11 @@ main h2 {
 
 .register a:active {
     background: #20c7c0;
+}
+
+.register p {
+    text-align: left;
+    margin-left: 10%;
 }
 
 footer {
